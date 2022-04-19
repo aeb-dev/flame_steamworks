@@ -1,6 +1,6 @@
 name: flame_steamworks
 description: A package that makes it possible to make a game in steam with flutter!
-version: 0.1.1
+version: 0.2.0
 homepage: https://github.com/aeb-dev/flame_steamworks
 repository: https://github.com/aeb-dev/flame_steamworks
 issues: https://github.com/aeb-dev/flame_steamworks/issues

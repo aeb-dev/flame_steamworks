@@ -3,37 +3,23 @@ import "dart:ffi";
 import "package:flame/game.dart";
 import "package:steamworks/steamworks.dart";
 
-/// A mixin to enable steam api for game server
-mixin SteamGameServer on FlameGame {
-  /// Instance of the [SteamServer] to access the steam api.
+/// A mixin to enable steam api for game client
+mixin HasSteamClient on FlameGame {
+  /// Instance of the [SteamClient] to access the steam api
   /// Do not call this until [init] is called
-  SteamServer get steamServer => SteamServer.instance;
+  SteamClient get steamClient => SteamClient.instance;
 
   @override
   void update(double dt) {
     super.update(dt);
 
-    steamServer.runFrame();
+    steamClient.runFrame();
   }
 
-  /// Initializes [SteamServer]. Call this
+  /// Initializes [SteamClient]. Call this
   /// function before calling any function
-  void init(
-    String ip, {
-    int steamPort = 0,
-    int gamePort = 27015,
-    int queryPort = 27016,
-    int serverMode = 3,
-    String versionString = "1.0.0.0",
-  }) {
-    SteamServer.init(
-      ip: ip,
-      steamPort: steamPort,
-      gamePort: gamePort,
-      queryPort: queryPort,
-      serverMode: serverMode,
-      versionString: versionString,
-    );
+  void init() {
+    SteamClient.init();
   }
 
   /// Registers a [Callback]
@@ -44,7 +30,7 @@ mixin SteamGameServer on FlameGame {
       cb: cb,
     );
 
-    steamServer.registerCallback(callback);
+    steamClient.registerCallback(callback);
 
     return callback;
   }
@@ -59,7 +45,7 @@ mixin SteamGameServer on FlameGame {
       cb: cb,
     );
 
-    steamServer.registerCallResult(callResult);
+    steamClient.registerCallResult(callResult);
 
     return callResult;
   }
@@ -68,13 +54,13 @@ mixin SteamGameServer on FlameGame {
   void unregisterCallback(
     Callback callback,
   ) {
-    steamServer.unregisterCallback(callback);
+    steamClient.unregisterCallback(callback);
   }
 
   /// Unregisters a [CallResult]
   void unregisterCallResult(
     CallResult callResult,
   ) {
-    steamServer.unregisterCallResult(callResult);
+    steamClient.unregisterCallResult(callResult);
   }
 }
