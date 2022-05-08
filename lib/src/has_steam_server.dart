@@ -39,42 +39,34 @@ mixin HasSteamServer on FlameGame {
   /// Registers a [Callback]
   Callback<T> registerCallback<T extends NativeType>(
     void Function(Pointer<T> data) cb,
-  ) {
-    Callback<T> callback = Callback<T>(
-      cb: cb,
-    );
-
-    steamServer.registerCallback(callback);
-
-    return callback;
-  }
+  ) =>
+      steamServer.registerCallback(
+        cb: cb,
+      );
 
   /// Registers a [CallResult]
   CallResult<T> registerCallResult<T extends NativeType>(
     SteamApiCall asyncCallId,
     void Function(Pointer<T> data, bool hasFailed) cb,
-  ) {
-    CallResult<T> callResult = CallResult<T>(
-      asyncCallId: asyncCallId,
-      cb: cb,
-    );
-
-    steamServer.registerCallResult(callResult);
-
-    return callResult;
-  }
+  ) =>
+      steamServer.registerCallResult(
+        asyncCallId: asyncCallId,
+        cb: cb,
+      );
 
   /// Unregisters a [Callback]
   void unregisterCallback(
     Callback callback,
-  ) {
-    steamServer.unregisterCallback(callback);
-  }
+  ) =>
+      steamServer.unregisterCallback(
+        callback: callback,
+      );
 
   /// Unregisters a [CallResult]
   void unregisterCallResult(
     CallResult callResult,
-  ) {
-    steamServer.unregisterCallResult(callResult);
-  }
+  ) =>
+      steamServer.unregisterCallResult(
+        callResult: callResult,
+      );
 }

@@ -1,3 +1,7 @@
+## 0.2.1
+
+- Update `steamworks` package and respective changes.
+
 ## 0.2.0
 
 - Changed the names of `SteamGame`, `SteamGameServer` mixins to `HasSteamClient`, `HasSteamServer`, respectively, in order to comply with flame naming conventions

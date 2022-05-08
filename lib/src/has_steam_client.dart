@@ -25,42 +25,34 @@ mixin HasSteamClient on FlameGame {
   /// Registers a [Callback]
   Callback<T> registerCallback<T extends NativeType>(
     void Function(Pointer<T> data) cb,
-  ) {
-    Callback<T> callback = Callback<T>(
-      cb: cb,
-    );
-
-    steamClient.registerCallback(callback);
-
-    return callback;
-  }
+  ) =>
+      steamClient.registerCallback(
+        cb: cb,
+      );
 
   /// Registers a [CallResult]
   CallResult<T> registerCallResult<T extends NativeType>(
     SteamApiCall asyncCallId,
     void Function(Pointer<T> data, bool hasFailed) cb,
-  ) {
-    CallResult<T> callResult = CallResult<T>(
-      asyncCallId: asyncCallId,
-      cb: cb,
-    );
-
-    steamClient.registerCallResult(callResult);
-
-    return callResult;
-  }
+  ) =>
+      steamClient.registerCallResult(
+        asyncCallId: asyncCallId,
+        cb: cb,
+      );
 
   /// Unregisters a [Callback]
   void unregisterCallback(
     Callback callback,
-  ) {
-    steamClient.unregisterCallback(callback);
-  }
+  ) =>
+      steamClient.unregisterCallback(
+        callback: callback,
+      );
 
   /// Unregisters a [CallResult]
   void unregisterCallResult(
     CallResult callResult,
-  ) {
-    steamClient.unregisterCallResult(callResult);
-  }
+  ) =>
+      steamClient.unregisterCallResult(
+        callResult: callResult,
+      );
 }
