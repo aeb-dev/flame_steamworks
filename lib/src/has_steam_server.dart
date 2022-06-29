@@ -23,7 +23,7 @@ mixin HasSteamServer on FlameGame {
     int steamPort = 0,
     int gamePort = 27015,
     int queryPort = 27016,
-    int serverMode = 3,
+    EServerMode serverMode = EServerMode.authenticationAndSecure,
     String versionString = "1.0.0.0",
   }) {
     SteamServer.init(

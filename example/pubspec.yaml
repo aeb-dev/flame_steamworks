@@ -18,7 +18,8 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.16.2 <3.0.0"
+  sdk: ">=2.17.5 <3.0.0"
+  flutter: ">=3.0.3"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -29,8 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flame: ^1.1.0
-  steamworks: ^0.2.0
+  flame: ^1.2.0
   flame_steamworks:
     path: ../
 
