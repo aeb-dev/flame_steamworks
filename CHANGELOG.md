@@ -1,3 +1,8 @@
+## 0.3.0
+
+- Update `steamworks` package and respective changes.
+- Update `flame` package and respective changes.
+
 ## 0.2.1
 
 - Update `steamworks` package and respective changes.
