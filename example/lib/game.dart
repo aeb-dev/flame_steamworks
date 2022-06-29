@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, avoid_print
 
+import "package:flame/components.dart";
 import "package:flame/game.dart";
 import "package:flame/input.dart";
 import "package:flame_steamworks/flame_steamworks.dart";
@@ -7,8 +8,7 @@ import "package:flutter/material.dart";
 import "package:flutter/services.dart";
 import "package:steamworks/steamworks.dart";
 
-class GameInstance extends FlameGame
-    with FPSCounter, KeyboardEvents, HasSteamClient {
+class GameInstance extends FlameGame with KeyboardEvents, HasSteamClient {
   TextPaint textPaint = TextPaint(
     style: const TextStyle(
       fontSize: 18.0,
@@ -20,6 +20,7 @@ class GameInstance extends FlameGame
   int count = 0;
 
   GameInstance() {
+    add(FpsTextComponent());
     init();
     registerCallback<UnreadChatMessagesChanged>((data) => ++count);
   }
@@ -27,8 +28,6 @@ class GameInstance extends FlameGame
   @override
   void render(Canvas canvas) {
     super.render(canvas);
-
-    textPaint.render(canvas, "fps: ${fps()}", Vector2(5, 20));
 
     textPaint.render(
       canvas,
