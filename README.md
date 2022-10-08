@@ -97,5 +97,11 @@ There are many call results in steam api, you check all of them on steam docs.
 
 &nbsp;
 
+# Published games
+Here are a list of games that have been published on Steam that utilise this package:
+- Omnichess - https://store.steampowered.com/app/2009510
+
+&nbsp;
+
 # What is next?
 Well, steam is the limit!
