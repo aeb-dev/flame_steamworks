@@ -1,3 +1,10 @@
+## 0.4.0
+
+- Update `steamworks` to 0.4.0.
+- Update `flame` to 1.8.2.
+- Update dart to 3.
+- Update flutter to 3.10.0.
+
 ## 0.3.0
 
 - Update `steamworks` package and respective changes.
