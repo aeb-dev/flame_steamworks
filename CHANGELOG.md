@@ -1,3 +1,7 @@
+## 0.4.1
+
+- Update `steamworks` to 0.4.2.
+
 ## 0.4.0
 
 - Update `steamworks` to 0.4.0.
