@@ -1,4 +1,9 @@
-## 0.4.1
+## 0.4.3
+
+- Update flame
+- Update steamworks
+
+## 0.4.2
 
 - Update `steamworks` to 0.4.4.
 
