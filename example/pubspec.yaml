@@ -30,7 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flame: ^1.2.0
+  flame: ^1.16.0
   flame_steamworks:
     path: ../
 

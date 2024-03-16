@@ -38,10 +38,10 @@ class GameInstance extends FlameGame with KeyboardEvents, HasSteamClient {
 
   @override
   KeyEventResult onKeyEvent(
-    RawKeyEvent event,
+    KeyEvent event,
     Set<LogicalKeyboardKey> keysPressed,
   ) {
-    bool isKeyDown = event is RawKeyDownEvent;
+    bool isKeyDown = event is KeyDownEvent;
 
     bool isSpace = keysPressed.contains(LogicalKeyboardKey.space);
 
