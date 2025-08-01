@@ -1,0 +1,28 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "start through steam",
+            "command": "steam",
+            "type": "shell",
+            "dependsOn": "flutter build windows",
+            "args": [
+                "-start",
+                "steam://rungameid/16736235453614653440"
+            ]
+        },
+        {
+            "label": "flutter build windows",
+            "command": "flutter",
+            "type": "shell",
+            "args": [
+                "build",
+                "windows",
+                "--debug"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/example"
+            }
+        }
+    ]
+}

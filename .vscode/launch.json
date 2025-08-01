@@ -20,6 +20,14 @@
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"
-        }
+        },
+        {
+            "name": "flame_steamworks (steam)",
+            "request": "attach",
+            "type": "dart",
+            "preLaunchTask": "start through steam",
+            "cwd": "${workspaceFolder}/example",
+            "vmServiceInfoFile": "vmservice_info.txt",
+        },
     ]
 }
